@@ -1,16 +1,183 @@
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube</title>
+  <style>
+    /* Reset and general styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #202020; /* Matching the sidebar */
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #202020;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .logo img {
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .header input[type="text"] {
+      flex-grow: 1;
+      max-width: 600px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: #333;
+      color: white;
+      margin-left: 20px;
+    }
+
+    .header .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .icons img {
+      height: 24px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 240px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #202020; /* Matches body background color */
+      padding-top: 50px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 15px 20px;
+      cursor: pointer;
+    }
+
+    .sidebar ul li:hover {
+      background-color: #383838;
+    }
+
+    /* Main content styles */
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background-color: #282828;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .video-info {
+      padding: 10px;
+    }
+
+    .video-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .video-channel {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .video-views {
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is the home page.</p>
-    <img src="https://www.shutterstock.com/image-vector/home-text-vector-word-typography-260nw-2306400675.jpg   " >
-     <p>Navigate to other pages:</p>
+  <div class="header">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png" alt="Logo">
+      <span>YouTube </span>
+    </div>
+    <input type="text" placeholder="Search">
+    <div class="icons">
+      <img src="https://img.icons8.com/material-outlined/24/ffffff/video-call.png" alt="Create">
+      <img src="https://img.icons8.com/material-outlined/24/ffffff/bell.png" alt="Notifications">
+      <img src="https://img.icons8.com/material-outlined/24/ffffff/user-male-circle.png" alt="User">
+    </div>
+  </div>
+
+  <div class="sidebar">
     <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <li>Home</li>
+      <li>Shorts</li>
+      <li>Subscriptions</li>
+      <li>Library</li>
+      <li>History</li>
     </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="video-grid">
+      <div class="video-card">
+        <img src="https://i.pinimg.com/736x/1d/19/18/1d19186d9e049e2b6c7ab1922628b530.jpg" alt="Thumbnail">
+        <div class="video-info">
+          <div class="video-title">Sample Video Title</div>
+          <div class="video-channel">Channel Name</div>
+          <div class="video-views">1.2M views • 2 days ago</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <img src="https://i.pinimg.com/736x/1d/19/18/1d19186d9e049e2b6c7ab1922628b530.jpg" alt="Thumbnail">
+        <div class="video-info">
+          <div class="video-title">Another Video Title</div>
+          <div class="video-channel">Channel Name</div>
+          <div class="video-views">900K views • 5 days ago</div>
+        </div>
+      </div>
+      <!-- Add more video cards as needed -->
+    </div>300x170
+  </div>
 </body>
-<html></html>
+</html>
