@@ -1,183 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube</title>
-  <style>
-    /* Reset and general styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #202020; /* Matching the sidebar */
-      color: white;
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nestlé </title>
+    
+    <style>
+        
+    
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+        }
 
-    /* Header styles */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: #202020;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        header {
+            background-color: #1f1f1f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .header .logo {
-      display: flex;
-      align-items: center;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-    .header .logo img {
-      height: 24px;
-      margin-right: 10px;
-    }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
 
-    .header input[type="text"] {
-      flex-grow: 1;
-      max-width: 600px;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 20px;
-      background-color: #333;
-      color: white;
-      margin-left: 20px;
-    }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
 
-    .header .icons {
-      display: flex;
-      align-items: center;
-    }
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
 
-    .header .icons img {
-      height: 24px;
-      margin-left: 15px;
-      cursor: pointer;
-    }
+        nav ul li a {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
 
-    /* Sidebar styles */
-    .sidebar {
-      width: 240px;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #202020; /* Matches body background color */
-      padding-top: 50px;
-    }
+        nav ul li a:hover {
+            color: #0078c1;
+        }
 
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .sidebar ul li {
-      padding: 15px 20px;
-      cursor: pointer;
-    }
+        .search input {
+            padding: 5px;
+            border: 1px solid #333;
+            background-color: #1f1f1f;
+            color: #fff;
+            border-radius: 4px;
+        }
 
-    .sidebar ul li:hover {
-      background-color: #383838;
-    }
+        .hero {
+            background: url('https://www.nestle.com/sites/default/files/styles/banner_image_slider_style/public/2025-01/espresso-concentrate-highlight.jpg.webp?itok=IgVXC4hH') no-repeat center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-    /* Main content styles */
-    .main-content {
-      margin-left: 240px;
-      padding: 20px;
-    }
+        .hero h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background: url('https://static.vecteezy.com/system/resources/thumbnails/023/513/862/small_2x/hot-coffee-cup-with-coffee-beans-wallpaper-coffee-photo.jpg') no-repeat center/cover;
+    background-size: cover;
+    padding: 300px;
+    position: relative;
+    z-index: 1;
+}
+        
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-    }
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
 
-    .video-card {
-      background-color: #282828;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-    }
+        .horizontal-strip {
+            background: url('https://www.nestle.com/sites/default/files/styles/banner_image_slider_style/public/2025-01/espresso-concentrate-highlight.jpg.webp?itok=IgVXC4hH') no-repeat center/cover;
+            height: 200px;
+            width: 100%;
+            margin: 40px 0;
+        }
 
-    .video-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .video-info {
-      padding: 10px;
-    }
+        .content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
 
-    .video-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      line-height: 1.5;
-    }
+        .content p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
 
-    .video-channel {
-      font-size: 12px;
-      color: #aaa;
-    }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-    .video-views {
-      font-size: 12px;
-      color: #aaa;
-    }
-  </style>
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+            padding: 20px;
+            background-color: #1f1f1f;
+            height: 350px;
+            scrollbar-width: none;
+        }
+
+        .carousel::-webkit-scrollbar
+
+        .carousel-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-item img {
+            height: 200px;
+            object-fit: cover;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #0078c1;
+            font-size: 14px;
+        }
+    </style> 
 </head>
 <body>
-  <div class="header">
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png" alt="Logo">
-      <span>YouTube </span>
-    </div>
-    <input type="text" placeholder="Search">
-    <div class="icons">
-      <img src="https://img.icons8.com/material-outlined/24/ffffff/video-call.png" alt="Create">
-      <img src="https://img.icons8.com/material-outlined/24/ffffff/bell.png" alt="Notifications">
-      <img src="https://img.icons8.com/material-outlined/24/ffffff/user-male-circle.png" alt="User">
-    </div>
-  </div>
-
-  <div class="sidebar">
-    <ul>
-      <li>Home</li>
-      <li>Shorts</li>
-      <li>Subscriptions</li>
-      <li>Library</li>
-      <li>History</li>
-    </ul>
-  </div>
-
-  <div class="main-content">
-    <div class="video-grid">
-      <div class="video-card">
-        <img src="https://i.pinimg.com/736x/1d/19/18/1d19186d9e049e2b6c7ab1922628b530.jpg" alt="Thumbnail">
-        <div class="video-info">
-          <div class="video-title">Sample Video Title</div>
-          <div class="video-channel">Channel Name</div>
-          <div class="video-views">1.2M views • 2 days ago</div>
+    
+    
+    <header>
+        <div class="logo">
+            <img src="data:image/jpeg;base64,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" alt="Nestlé Logo">
+            <span class="logo-text">Nestlé</span>
         </div>
-      </div>
-      <div class="video-card">
-        <img src="https://i.pinimg.com/736x/1d/19/18/1d19186d9e049e2b6c7ab1922628b530.jpg" alt="Thumbnail">
-        <div class="video-info">
-          <div class="video-title">Another Video Title</div>
-          <div class="video-channel">Channel Name</div>
-          <div class="video-views">900K views • 5 days ago</div>
+        <nav>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Stories</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Nutrition</a></li>
+                <li><a href="#">Ask Nestlé</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search...">
         </div>
-      </div>
-      <!-- Add more video cards as needed -->
-    </div>300x170
-  </div>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Café-style cold beverages at home</h1>
+            <p>Nescafé Espresso Concentrate expands to the US</p>
+        </div>
+    </div>
+
+    <div class="horizontal-strip"></div>
+
+    <div class="content">
+        <h2>About Nestlé</h2>
+        <img height="300px" width= "300px" src="https://images.javatpoint.com/company/images/nestle-company.png" alt="Nestlé Products">
+        <p>Nestlé is committed to enhancing the quality of life and contributing to a healthier future. With a wide range of food and beverage products, we strive to provide solutions for people and their pets.</p>
+        <p>Our mission is to unlock the power of food to enhance the quality of life for everyone, today and for generations to come.</p>
+    </div>
+
+    <div class="content">
+        <h2>Our Products</h2>
+        <img src="https://via.placeholder.com/1200x400" alt="Our Products">
+        <p>Explore our wide range of products from coffee and beverages to pet food, catering to your unique needs.</p>
+    </div>
+
+    <div class="carousel">
+        <div class="carousel-item">
+            
+            <img height="100px" width="100px" src="https://www.nestle.com/sites/default/files/styles/webp_image/public/2024-11/capital-markets-day-2024-homepage-box.jpg.webp?itok=W9QZ7Ufa" >
+            <h3>Capital Markets Day</h3>
+            <p>At Capital Markets Day we presented our plan to fuel and accelerate growth. Watch the webcast replay.</p>
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/300x200" alt="Sustainability">
+            <h3>Sustainability</h3>
+            <p>We are taking action to fulfill our promise to advance regenerative food systems at scale.</p>
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/300x200" alt="Contact Us">
+            <h3>Contact Us</h3>
+            <p>Got questions, concerns or feedback? We want to hear them. Find out the many ways you can get in touch.</p>
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/300x200" alt="Careers">
+            <h3>Careers</h3>
+            <p>Looking for a job opportunity at Nestlé? Search our available careers.</p>
+        </div>
+    </div>
+    
+    
+
+    <div class="footer">
+        <p>&copy; 2025 Nestlé. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
 </body>
 </html>
